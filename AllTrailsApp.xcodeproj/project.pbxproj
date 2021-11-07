@@ -183,23 +183,31 @@
 		4615F28D2731F75200B05C9A /* AllTrailsApp */ = {
 			isa = PBXGroup;
 			children = (
-				4609106B273761A50062362B /* ValidPlaceDetailsResponse.json */,
-				4609105727374F470062362B /* ValidNearbyPlacesResponse.json */,
+				468CEE2C2738589200C64CB5 /* Test JSONs */,
 				4604B8492734B45400168BDC /* Database */,
 				4604B8482734B44500168BDC /* Network */,
 				4604B8472734B41F00168BDC /* Resources */,
 				4604B8462734B40A00168BDC /* Models */,
 				4604B8452734B3FA00168BDC /* Utils */,
 				4604B8442734B3E000168BDC /* CustomViews */,
-				468E923D273247BC00089741 /* TextSearchAPIResponse.json */,
-				46091054273739A30062362B /* PlaceDetailsResponse.json */,
-				46091034273731B50062362B /* NearbySearchResponse.json */,
 				4615F28E2731F75200B05C9A /* AppDelegate.swift */,
 				4615F2902731F75200B05C9A /* SceneDelegate.swift */,
 				4615F2922731F75200B05C9A /* ViewController.swift */,
 				4609102D2737144D0062362B /* RestaurantDetailViewController.swift */,
 			);
 			path = AllTrailsApp;
+			sourceTree = "<group>";
+		};
+		468CEE2C2738589200C64CB5 /* Test JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				4609106B273761A50062362B /* ValidPlaceDetailsResponse.json */,
+				4609105727374F470062362B /* ValidNearbyPlacesResponse.json */,
+				468E923D273247BC00089741 /* TextSearchAPIResponse.json */,
+				46091054273739A30062362B /* PlaceDetailsResponse.json */,
+				46091034273731B50062362B /* NearbySearchResponse.json */,
+			);
+			path = "Test JSONs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
