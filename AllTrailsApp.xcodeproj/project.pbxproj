@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4609102E2737144D0062362B /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609102D2737144D0062362B /* RestaurantDetailViewController.swift */; };
+		46091030273717720062362B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609102F273717720062362B /* CollectionViewCell.swift */; };
+		4609103327372EBB0062362B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 4609103227372EBB0062362B /* Moya */; };
+		46091035273731B50062362B /* NearbySearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 46091034273731B50062362B /* NearbySearchResponse.json */; };
+		46091055273739A30062362B /* PlaceDetailsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 46091054273739A30062362B /* PlaceDetailsResponse.json */; };
+		46091056273748DC0062362B /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924E27346B4100089741 /* RestaurantService.swift */; };
+		4609105827374F470062362B /* ValidNearbyPlacesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 4609105727374F470062362B /* ValidNearbyPlacesResponse.json */; };
+		46091060273758890062362B /* AllTrailsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609105F273758890062362B /* AllTrailsAppTests.swift */; };
+		46091068273758DD0062362B /* AllTrailsParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46091067273758DD0062362B /* AllTrailsParsingTests.swift */; };
+		4609106C273761A60062362B /* ValidPlaceDetailsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 4609106B273761A50062362B /* ValidPlaceDetailsResponse.json */; };
+		4615F28F2731F75200B05C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F28E2731F75200B05C9A /* AppDelegate.swift */; };
+		4615F2912731F75200B05C9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2902731F75200B05C9A /* SceneDelegate.swift */; };
+		4615F2932731F75200B05C9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2922731F75200B05C9A /* ViewController.swift */; };
+		4615F2962731F75200B05C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4615F2942731F75200B05C9A /* Main.storyboard */; };
+		4615F2992731F75200B05C9A /* AllTrailsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2972731F75200B05C9A /* AllTrailsApp.xcdatamodeld */; };
+		4615F29B2731F75500B05C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4615F29A2731F75500B05C9A /* Assets.xcassets */; };
+		4615F29E2731F75500B05C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4615F29C2731F75500B05C9A /* LaunchScreen.storyboard */; };
+		4615F2A72731F8CC00B05C9A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4615F2A62731F8CC00B05C9A /* SnapKit */; };
+		4615F2A92731F8EA00B05C9A /* AllTrailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2A82731F8EA00B05C9A /* AllTrailsCell.swift */; };
+		468E923E273247BC00089741 /* TextSearchAPIResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 468E923D273247BC00089741 /* TextSearchAPIResponse.json */; };
+		468E92402732482900089741 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E923F2732482900089741 /* Utils.swift */; };
+		468E9242273263F300089741 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E9241273263F300089741 /* NavView.swift */; };
+		468E9244273266E900089741 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E9243273266E900089741 /* TextField.swift */; };
+		468E924627326A9000089741 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924527326A9000089741 /* ResponseModels.swift */; };
+		468E924B273446B500089741 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924A273446B500089741 /* RatingView.swift */; };
+		468E924D2734576D00089741 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924C2734576D00089741 /* ColorUtils.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46091062273758890062362B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4615F2832731F75200B05C9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4615F28A2731F75200B05C9A;
+			remoteInfo = AllTrailsApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4609102D2737144D0062362B /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		4609102F273717720062362B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		46091034273731B50062362B /* NearbySearchResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NearbySearchResponse.json; sourceTree = "<group>"; };
+		46091054273739A30062362B /* PlaceDetailsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlaceDetailsResponse.json; sourceTree = "<group>"; };
+		4609105727374F470062362B /* ValidNearbyPlacesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ValidNearbyPlacesResponse.json; sourceTree = "<group>"; };
+		4609105D273758890062362B /* AllTrailsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllTrailsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4609105F273758890062362B /* AllTrailsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrailsAppTests.swift; sourceTree = "<group>"; };
+		46091061273758890062362B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46091067273758DD0062362B /* AllTrailsParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrailsParsingTests.swift; sourceTree = "<group>"; };
+		4609106B273761A50062362B /* ValidPlaceDetailsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ValidPlaceDetailsResponse.json; sourceTree = "<group>"; };
+		4615F28B2731F75200B05C9A /* AllTrailsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllTrailsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4615F28E2731F75200B05C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4615F2902731F75200B05C9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4615F2922731F75200B05C9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4615F2952731F75200B05C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4615F2982731F75200B05C9A /* AllTrailsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AllTrailsApp.xcdatamodel; sourceTree = "<group>"; };
+		4615F29A2731F75500B05C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4615F29D2731F75500B05C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4615F29F2731F75500B05C9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4615F2A82731F8EA00B05C9A /* AllTrailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrailsCell.swift; sourceTree = "<group>"; };
+		468E923D273247BC00089741 /* TextSearchAPIResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TextSearchAPIResponse.json; sourceTree = "<group>"; };
+		468E923F2732482900089741 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "../New Group1/Utils.swift"; sourceTree = "<group>"; };
+		468E9241273263F300089741 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		468E9243273266E900089741 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = "../New Group/TextField.swift"; sourceTree = "<group>"; };
+		468E924527326A9000089741 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResponseModels.swift; path = "../New Group2/ResponseModels.swift"; sourceTree = "<group>"; };
+		468E924A273446B500089741 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		468E924C2734576D00089741 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		468E924E27346B4100089741 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantService.swift; path = "../New Group3/RestaurantService.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4609105A273758890062362B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4615F2882731F75200B05C9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4609103327372EBB0062362B /* Moya in Frameworks */,
+				4615F2A72731F8CC00B05C9A /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4604B8442734B3E000168BDC /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				468E924A273446B500089741 /* RatingView.swift */,
+				4615F2A82731F8EA00B05C9A /* AllTrailsCell.swift */,
+				468E9241273263F300089741 /* NavView.swift */,
+				468E9243273266E900089741 /* TextField.swift */,
+				4609102F273717720062362B /* CollectionViewCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		4604B8452734B3FA00168BDC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				468E924C2734576D00089741 /* ColorUtils.swift */,
+				468E923F2732482900089741 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4604B8462734B40A00168BDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				468E924527326A9000089741 /* ResponseModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4604B8472734B41F00168BDC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4615F2942731F75200B05C9A /* Main.storyboard */,
+				4615F29A2731F75500B05C9A /* Assets.xcassets */,
+				4615F29C2731F75500B05C9A /* LaunchScreen.storyboard */,
+				4615F29F2731F75500B05C9A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4604B8482734B44500168BDC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				468E924E27346B4100089741 /* RestaurantService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4604B8492734B45400168BDC /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				4615F2972731F75200B05C9A /* AllTrailsApp.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		4609105E273758890062362B /* AllTrailsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4609105F273758890062362B /* AllTrailsAppTests.swift */,
+				46091061273758890062362B /* Info.plist */,
+				46091067273758DD0062362B /* AllTrailsParsingTests.swift */,
+			);
+			path = AllTrailsAppTests;
+			sourceTree = "<group>";
+		};
+		4615F2822731F75200B05C9A = {
+			isa = PBXGroup;
+			children = (
+				4615F28D2731F75200B05C9A /* AllTrailsApp */,
+				4609105E273758890062362B /* AllTrailsAppTests */,
+				4615F28C2731F75200B05C9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4615F28C2731F75200B05C9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4615F28B2731F75200B05C9A /* AllTrailsApp.app */,
+				4609105D273758890062362B /* AllTrailsAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4615F28D2731F75200B05C9A /* AllTrailsApp */ = {
+			isa = PBXGroup;
+			children = (
+				4609106B273761A50062362B /* ValidPlaceDetailsResponse.json */,
+				4609105727374F470062362B /* ValidNearbyPlacesResponse.json */,
+				4604B8492734B45400168BDC /* Database */,
+				4604B8482734B44500168BDC /* Network */,
+				4604B8472734B41F00168BDC /* Resources */,
+				4604B8462734B40A00168BDC /* Models */,
+				4604B8452734B3FA00168BDC /* Utils */,
+				4604B8442734B3E000168BDC /* CustomViews */,
+				468E923D273247BC00089741 /* TextSearchAPIResponse.json */,
+				46091054273739A30062362B /* PlaceDetailsResponse.json */,
+				46091034273731B50062362B /* NearbySearchResponse.json */,
+				4615F28E2731F75200B05C9A /* AppDelegate.swift */,
+				4615F2902731F75200B05C9A /* SceneDelegate.swift */,
+				4615F2922731F75200B05C9A /* ViewController.swift */,
+				4609102D2737144D0062362B /* RestaurantDetailViewController.swift */,
+			);
+			path = AllTrailsApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4609105C273758890062362B /* AllTrailsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46091064273758890062362B /* Build configuration list for PBXNativeTarget "AllTrailsAppTests" */;
+			buildPhases = (
+				46091059273758890062362B /* Sources */,
+				4609105A273758890062362B /* Frameworks */,
+				4609105B273758890062362B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46091063273758890062362B /* PBXTargetDependency */,
+			);
+			name = AllTrailsAppTests;
+			productName = AllTrailsAppTests;
+			productReference = 4609105D273758890062362B /* AllTrailsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4615F28A2731F75200B05C9A /* AllTrailsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4615F2A22731F75500B05C9A /* Build configuration list for PBXNativeTarget "AllTrailsApp" */;
+			buildPhases = (
+				4615F2872731F75200B05C9A /* Sources */,
+				4615F2882731F75200B05C9A /* Frameworks */,
+				4615F2892731F75200B05C9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AllTrailsApp;
+			packageProductDependencies = (
+				4615F2A62731F8CC00B05C9A /* SnapKit */,
+				4609103227372EBB0062362B /* Moya */,
+			);
+			productName = AllTrailsApp;
+			productReference = 4615F28B2731F75200B05C9A /* AllTrailsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4615F2832731F75200B05C9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					4609105C273758890062362B = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 4615F28A2731F75200B05C9A;
+					};
+					4615F28A2731F75200B05C9A = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 4615F2862731F75200B05C9A /* Build configuration list for PBXProject "AllTrailsApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4615F2822731F75200B05C9A;
+			packageReferences = (
+				4615F2A52731F8CC00B05C9A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4609103127372EBB0062362B /* XCRemoteSwiftPackageReference "Moya" */,
+			);
+			productRefGroup = 4615F28C2731F75200B05C9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4615F28A2731F75200B05C9A /* AllTrailsApp */,
+				4609105C273758890062362B /* AllTrailsAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4609105B273758890062362B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4615F2892731F75200B05C9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4609106C273761A60062362B /* ValidPlaceDetailsResponse.json in Resources */,
+				4615F29E2731F75500B05C9A /* LaunchScreen.storyboard in Resources */,
+				4609105827374F470062362B /* ValidNearbyPlacesResponse.json in Resources */,
+				4615F29B2731F75500B05C9A /* Assets.xcassets in Resources */,
+				468E923E273247BC00089741 /* TextSearchAPIResponse.json in Resources */,
+				46091035273731B50062362B /* NearbySearchResponse.json in Resources */,
+				4615F2962731F75200B05C9A /* Main.storyboard in Resources */,
+				46091055273739A30062362B /* PlaceDetailsResponse.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46091059273758890062362B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46091060273758890062362B /* AllTrailsAppTests.swift in Sources */,
+				46091068273758DD0062362B /* AllTrailsParsingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4615F2872731F75200B05C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4615F2932731F75200B05C9A /* ViewController.swift in Sources */,
+				4615F28F2731F75200B05C9A /* AppDelegate.swift in Sources */,
+				4615F2A92731F8EA00B05C9A /* AllTrailsCell.swift in Sources */,
+				468E924B273446B500089741 /* RatingView.swift in Sources */,
+				46091056273748DC0062362B /* RestaurantService.swift in Sources */,
+				468E9244273266E900089741 /* TextField.swift in Sources */,
+				4609102E2737144D0062362B /* RestaurantDetailViewController.swift in Sources */,
+				4615F2992731F75200B05C9A /* AllTrailsApp.xcdatamodeld in Sources */,
+				468E924627326A9000089741 /* ResponseModels.swift in Sources */,
+				4615F2912731F75200B05C9A /* SceneDelegate.swift in Sources */,
+				46091030273717720062362B /* CollectionViewCell.swift in Sources */,
+				468E924D2734576D00089741 /* ColorUtils.swift in Sources */,
+				468E92402732482900089741 /* Utils.swift in Sources */,
+				468E9242273263F300089741 /* NavView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46091063273758890062362B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4615F28A2731F75200B05C9A /* AllTrailsApp */;
+			targetProxy = 46091062273758890062362B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4615F2942731F75200B05C9A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4615F2952731F75200B05C9A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4615F29C2731F75500B05C9A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4615F29D2731F75500B05C9A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		46091065273758890062362B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AllTrailsAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mak.AllTrailsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AllTrailsApp.app/AllTrailsApp";
+			};
+			name = Debug;
+		};
+		46091066273758890062362B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AllTrailsAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mak.AllTrailsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AllTrailsApp.app/AllTrailsApp";
+			};
+			name = Release;
+		};
+		4615F2A02731F75500B05C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4615F2A12731F75500B05C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4615F2A32731F75500B05C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = AllTrailsApp/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mak.GoogleMapsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4615F2A42731F75500B05C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = AllTrailsApp/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mak.GoogleMapsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46091064273758890062362B /* Build configuration list for PBXNativeTarget "AllTrailsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46091065273758890062362B /* Debug */,
+				46091066273758890062362B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4615F2862731F75200B05C9A /* Build configuration list for PBXProject "AllTrailsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4615F2A02731F75500B05C9A /* Debug */,
+				4615F2A12731F75500B05C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4615F2A22731F75500B05C9A /* Build configuration list for PBXNativeTarget "AllTrailsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4615F2A32731F75500B05C9A /* Debug */,
+				4615F2A42731F75500B05C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4609103127372EBB0062362B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		4615F2A52731F8CC00B05C9A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4609103227372EBB0062362B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4609103127372EBB0062362B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		4615F2A62731F8CC00B05C9A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4615F2A52731F8CC00B05C9A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4615F2972731F75200B05C9A /* AllTrailsApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4615F2982731F75200B05C9A /* AllTrailsApp.xcdatamodel */,
+			);
+			currentVersion = 4615F2982731F75200B05C9A /* AllTrailsApp.xcdatamodel */;
+			name = AllTrailsApp.xcdatamodeld;
+			path = "../New Group4/AllTrailsApp.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4615F2832731F75200B05C9A /* Project object */;
+}

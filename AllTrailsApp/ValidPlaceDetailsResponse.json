@@ -1,0 +1,325 @@
+{
+    "html_attributions": [],
+    "result": {
+        "address_components": [
+            {
+                "long_name": "18508",
+                "short_name": "18508",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "33rd Avenue West",
+                "short_name": "33rd Ave W",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Lynnwood",
+                "short_name": "Lynnwood",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Snohomish County",
+                "short_name": "Snohomish County",
+                "types": [
+                    "administrative_area_level_2",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Washington",
+                "short_name": "WA",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "United States",
+                "short_name": "US",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "98037",
+                "short_name": "98037",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">18508 33rd Ave W</span>, <span class=\"locality\">Lynnwood</span>, <span class=\"region\">WA</span> <span class=\"postal-code\">98037</span>, <span class=\"country-name\">USA</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "18508 33rd Ave W, Lynnwood, WA 98037, USA",
+        "formatted_phone_number": "(425) 672-8029",
+        "geometry": {
+            "location": {
+                "lat": 47.8306553,
+                "lng": -122.2783294
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.83192653029149,
+                    "lng": -122.2769863197085
+                },
+                "southwest": {
+                    "lat": 47.8292285697085,
+                    "lng": -122.2796842802915
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+        "international_phone_number": "+1 425-672-8029",
+        "name": "Buffalo Wild Wings",
+        "opening_hours": {
+            "open_now": true,
+            "periods": [
+                {
+                    "close": {
+                        "day": 1,
+                        "time": "0000"
+                    },
+                    "open": {
+                        "day": 0,
+                        "time": "0900"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 2,
+                        "time": "0000"
+                    },
+                    "open": {
+                        "day": 1,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 3,
+                        "time": "0000"
+                    },
+                    "open": {
+                        "day": 2,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 4,
+                        "time": "0000"
+                    },
+                    "open": {
+                        "day": 3,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 5,
+                        "time": "0000"
+                    },
+                    "open": {
+                        "day": 4,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "0000"
+                    },
+                    "open": {
+                        "day": 5,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 0,
+                        "time": "0000"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "1100"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 11:00 AM – 12:00 AM",
+                "Tuesday: 11:00 AM – 12:00 AM",
+                "Wednesday: 11:00 AM – 12:00 AM",
+                "Thursday: 11:00 AM – 12:00 AM",
+                "Friday: 11:00 AM – 12:00 AM",
+                "Saturday: 11:00 AM – 12:00 AM",
+                "Sunday: 9:00 AM – 12:00 AM"
+            ]
+        },
+        "photos": [
+            {
+                "height": 3096,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116927815887165380773\">ネージュ嘉</a>"
+                ],
+                "photo_reference": "Aap_uEDiIH4Y4UtrWVrgWcnjQMdFdgCOwVeMSoVWPqSEPyBq8-ua_vPuOzoG6bWWu3eFZFPHLiQi3JhrzBM2LLW7yRWYWnanlD37RI6sNklkiPZG_YkK5b_WNxv2D0aIlmVI1FLJ6o2YXFoDQFfl0t3SSgm2-aPeA7SoRBKrmb1aQrO1rB4",
+                "width": 5504
+            },
+            {
+                "height": 650,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106080777545045272041\">Buffalo Wild Wings</a>"
+                ],
+                "photo_reference": "Aap_uEAZo6RtlTc6XXAzKf4g-goL1EDVoB5MTnxgeRTDa1dmZgA3RtWpvB2neoBIZINIZoItPL_Dc40U3Dnc8Zv3bSQOCYVMwB3D1qu_1OTVCJawaBAerxT4DnSVfqGOKnXNZ1l9rQEWO-4I0ynwPUnOcZEZJIqWayUw5DtodyV4AKbHaqx5",
+                "width": 1157
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110968765767960158059\">Geethapriya Kumaraguru</a>"
+                ],
+                "photo_reference": "Aap_uEA7bKX2jDBp7xzMkAdNg2eFZ9FdMVX4RwzY036DdtQYdjQP6eS-CTdCXLAEk-MRp92RZW6a4vSeNTHqX1W7Da7rtJl6Sl1rC5tFtcQ3kKXkFBuZAgwaZM69NWzHt3zYN2cp4iWeDFBIrNH9aHgs1loBHYjDo3EENaS7bYzZJODD2_T5",
+                "width": 4032
+            },
+            {
+                "height": 3416,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103913658820771675745\">siri chandana</a>"
+                ],
+                "photo_reference": "Aap_uEBCAkAtNB_-EVgBjYeHCIYDJNZWmvJyDc2gZkpd2pmdGhhEuTHHxlF3UV0dv7bcT_d_tPOQetnrp0rqS2wibcZ3WL6zOqbxhW6gvptWhzCBYc3lg8kVyCUwLWW36XXffMyaTqj02X4l9ohUbRNa25f7xa2FbTBU-cDtnLwDsrAjDP2o",
+                "width": 2748
+            },
+            {
+                "height": 467,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114125137038112413632\">Mark Tellius</a>"
+                ],
+                "photo_reference": "Aap_uEB6m08p4GJNKRPwoxotV4DLxXOTiFWVlWLTR1YA_12ln7gLg3SwaSsHW9nSFenbdiKwE_Ej2UvfILdB_W8TmlJyhsVVz8essu_0gqZrreX2prYID-5QHJAeVhShZfFW0b6LkUdpESbwh6cagMbu1U25wnJN6XLITf8r3KYb_tXw-3mw",
+                "width": 800
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/105498485986727032193\">Gary&amp;Rochelle Taber</a>"
+                ],
+                "photo_reference": "Aap_uEDxAJg2-19aLD8GRzfXS-JD_gy8yPZ4hl4zgvfi3HA5Q52IhKVNLBxHbydVJRR2hMNood6QB67uoTZ5G96XrknBs1b0_xXldCfc7ujbvevcSb1voEVgrBewtSi1ydUu_g8LvRuaNUZH6Ucq4tTu-P3yxcf_a0j7O6ZOBOGbBc2mb8by",
+                "width": 4032
+            },
+            {
+                "height": 414,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100432263348388978317\">Chris Hashimoto</a>"
+                ],
+                "photo_reference": "Aap_uECAlDazVDwaGIprRv32aSBw6sDZZTlawr80vpNZDqMATg6SBYo9egIFfEmYerlaU4ctnVP-dZ0B8_eLiG7uR68V3zN94M1sCRLBkqeY4Oyo7MxFbz3r5I1na2s3sJ7Z3QIVB2BTPw0WKYBtqfU9bFeBRKbmdb-yyeArLbG82Ppl9D4F",
+                "width": 421
+            },
+            {
+                "height": 518,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100432263348388978317\">Chris Hashimoto</a>"
+                ],
+                "photo_reference": "Aap_uEBub_oSE0fM_bwj0xtejCvZCh533nLCCwEpk7LgxntWeM6H5Ym_DIPDZ9rR9zgX_2ZhWzCFp_q1sZHefeyOGicu9LFWOL3YegbmLRbZsX4xIgy6BbH197-9LLjkerGYMESKxSv5EuBHAj1hsaJNdN_JLHaA9lOYujy_WrJe_1O11Uf-",
+                "width": 447
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/105498485986727032193\">Gary&amp;Rochelle Taber</a>"
+                ],
+                "photo_reference": "Aap_uEBjs2PW65elWqwsQcOF5EM3_MndmVb39ELGw7Ir26vIDg4PmzbZprIlb99xPZI84-dAjM22FNtzE-8hcubwgkfBC_ce4ALAuua6k1wn_gxTgcyjFWvU-2dwjbOa27LoG2L0iM98gGGZpbS6nMLLZUWTd6CXBS9m6Vkcr__0MnVxsOg5",
+                "width": 4032
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106167154719366624922\">Lynnwood Mom</a>"
+                ],
+                "photo_reference": "Aap_uEA_uJYfLovDsZd78qA5wQDSLbGKX1jZcD5COf8PechdmoJCZcuUZUW9IDW2gAD5DqxH90kpd5O84NbPCgsFI2qSdjaxEK9Xpc2M7e_pHIUe0MXQK8YqvaZt_zQRFkcx6V2j86ZQd9-vtaEz0tqEppDUL_eHHNTs29F4TyjARmXMaMAK",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJ2xPs9QwFkFQRtpuVcXrGshM",
+        "plus_code": {
+            "compound_code": "RPJC+7M Lynnwood, WA, USA",
+            "global_code": "84VVRPJC+7M"
+        },
+        "price_level": 2,
+        "rating": 3.8,
+        "reference": "ChIJ2xPs9QwFkFQRtpuVcXrGshM",
+        "reviews": [
+            {
+                "author_name": "Morgan",
+                "author_url": "https://www.google.com/maps/contrib/101824266453902735744/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJxwveTjykk5w9rvdmF8thYjOq3v_xSxVHCC7fbH=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 1,
+                "relative_time_description": "a month ago",
+                "text": "Had some pretty bad experiences here, not going to be returning to this location at least. Went one time after calling to make sure they could seat us, only to find out that the hot wings restaurant doesn't have any CHICKEN. Maybe mention that! Went last time and was fully ignored for 20 minutes before taking my order, never checked in or refilled drinks, and had to be flagged down to get a check. Didn't get all of our items, messed up others, and still attempted to charge me for the full order. When this place first opened it was great, then a year or two later good, then after that just so-so. Now, it's fully in-the-toilet. Recommend you avoid this place, at least until they find some competent management.",
+                "time": 1632931990
+            },
+            {
+                "author_name": "Sudheer kumar",
+                "author_url": "https://www.google.com/maps/contrib/111784627882431771770/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14Gic5fJOy16RSPvJo90FLFU8OYxmJ-Yph8VsKINZoXY=s128-c0x00000000-cc-rp-mo-ba3",
+                "rating": 5,
+                "relative_time_description": "a year ago",
+                "text": "Food and culture",
+                "time": 1600055729
+            },
+            {
+                "author_name": "sharath chandran thekkethil",
+                "author_url": "https://www.google.com/maps/contrib/112911765736837882582/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14GiMJNx6MH25gSPjAf9k5CX52URLSChXfhKs6ZCcEw=s128-c0x00000000-cc-rp-mo",
+                "rating": 4,
+                "relative_time_description": "9 months ago",
+                "text": "Amazing chicken wings with choices of sauces. Good selection of beers. Except for a cpl of dishes being brought a bit cold, the overall experience was good.",
+                "time": 1611635876
+            },
+            {
+                "author_name": "Matthew Jeffers",
+                "author_url": "https://www.google.com/maps/contrib/105236106066913878093/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJzJiG4YZClR0Q5Lfr7MqXTyRBc-cjVFhBCVvhhD=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 4,
+                "relative_time_description": "2 weeks ago",
+                "text": "The only reason this is a 4 out of 5 stars is because they ran out of a couple things that my buddy was bringing home to his roommate such as those delicious cheese curd that I've decided if I ever go again is a staple of my order. It was surprisingly busy when we went there on a Tuesday. I'll probably be looking for one closer to where I live but I will go again",
+                "time": 1634508121
+            },
+            {
+                "author_name": "Daniel H.",
+                "author_url": "https://www.google.com/maps/contrib/104705191709443791320/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14GjIDAGAMhxjBjJKRPIcWiGzA1-ZzaO2J2IUUPjLwg=s128-c0x00000000-cc-rp-mo-ba3",
+                "rating": 1,
+                "relative_time_description": "in the last week",
+                "text": "My son did a to go order and was told it would take a 15-20min wait which is fine. However, he waited 1hr for a 20piece order. The only thing they did to make it right was offer him a drink. I am really disappointed with the service at this location. I hope that they do better with their customer service. Learn how to make it right when you mess up.",
+                "time": 1636081607
+            }
+        ],
+        "types": [
+            "meal_takeaway",
+            "bar",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=1419415061769067446",
+        "user_ratings_total": 2320,
+        "utc_offset": -420,
+        "vicinity": "18508 33rd Avenue West, Lynnwood",
+        "website": "https://www.buffalowildwings.com/en/locations/detail/351/?utm_source=google&utm_medium=organic&utm_campaign=rio"
+    },
+    "status": "OK"
+}
