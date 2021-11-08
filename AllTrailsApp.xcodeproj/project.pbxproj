@@ -38,6 +38,9 @@
 		468E9242273263F300089741 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E9241273263F300089741 /* NavView.swift */; };
 		468E924B273446B500089741 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924A273446B500089741 /* RatingView.swift */; };
 		468E924D2734576D00089741 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924C2734576D00089741 /* ColorUtils.swift */; };
+		469232912738C99F0064D990 /* MapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469232902738C99F0064D990 /* MapPointAnnotation.swift */; };
+		4692329327390F300064D990 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4692329227390F300064D990 /* DetailsCell.swift */; };
+		4692329527392DEC0064D990 /* RestaurantDetailViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4692329427392DEC0064D990 /* RestaurantDetailViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		468E9241273263F300089741 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		468E924A273446B500089741 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		468E924C2734576D00089741 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		469232902738C99F0064D990 /* MapPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPointAnnotation.swift; sourceTree = "<group>"; };
+		4692329227390F300064D990 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		4692329427392DEC0064D990 /* RestaurantDetailViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantDetailViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				468E9241273263F300089741 /* NavView.swift */,
 				4609102F273717720062362B /* CollectionViewCell.swift */,
 				468CEE7227389CFD00C64CB5 /* AnnotationView.swift */,
+				4692329227390F300064D990 /* DetailsCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				468CEE69273867ED00C64CB5 /* ResponseModels.swift */,
+				469232902738C99F0064D990 /* MapPointAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				4615F2922731F75200B05C9A /* ViewController.swift */,
 				4609102D2737144D0062362B /* RestaurantDetailViewController.swift */,
 				468CEE70273868AE00C64CB5 /* ViewController+Extensions.swift */,
+				4692329427392DEC0064D990 /* RestaurantDetailViewController+Extensions.swift */,
 			);
 			path = AllTrailsApp;
 			sourceTree = "<group>";
@@ -359,14 +368,17 @@
 			files = (
 				4615F2932731F75200B05C9A /* ViewController.swift in Sources */,
 				4615F28F2731F75200B05C9A /* AppDelegate.swift in Sources */,
+				4692329327390F300064D990 /* DetailsCell.swift in Sources */,
 				4615F2A92731F8EA00B05C9A /* AllTrailsCell.swift in Sources */,
 				468CEE66273867D100C64CB5 /* TextField.swift in Sources */,
 				468CEE71273868AE00C64CB5 /* ViewController+Extensions.swift in Sources */,
 				468E924B273446B500089741 /* RatingView.swift in Sources */,
 				4609102E2737144D0062362B /* RestaurantDetailViewController.swift in Sources */,
+				4692329527392DEC0064D990 /* RestaurantDetailViewController+Extensions.swift in Sources */,
 				468CEE68273867DC00C64CB5 /* Utils.swift in Sources */,
 				468CEE7327389CFD00C64CB5 /* AnnotationView.swift in Sources */,
 				4615F2912731F75200B05C9A /* SceneDelegate.swift in Sources */,
+				469232912738C99F0064D990 /* MapPointAnnotation.swift in Sources */,
 				468CEE642738672200C64CB5 /* ViewModel.swift in Sources */,
 				46091030273717720062362B /* CollectionViewCell.swift in Sources */,
 				468CEE6A273867ED00C64CB5 /* ResponseModels.swift in Sources */,

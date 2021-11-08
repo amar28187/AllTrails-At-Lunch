@@ -18,11 +18,16 @@ class RestaurantDetailViewController: UIViewController {
             self.priceAndSupportingTextLabel.text = (st.count > 0) ?  (st + " \u{00B7}" + " Restaurant") : "Restaurant"
             self.hoursLabel.attributedText = (place?.openingHours?.isOpen ?? false) ? NSAttributedString(string: "Open", attributes: [NSAttributedString.Key.foregroundColor: ColorUtils.mapButtonColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]) : NSAttributedString(string: "Closed", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)])
             self.reviewCountLabel.text = "(\(place?.userRating ?? 0))"
+            DispatchQueue.main.async {
+                self.tableview.reloadData()
+            }
         }
     }
     
+    let tableview = UITableView(frame: .zero)
     
-    var images = [Int]()
+    let viewModel: ViewModel = ViewModel()
+    var images = [UIImage]()
     var backButton: UIButton = {
         let leftButton = UIButton(frame: .zero)
         leftButton.setImage(UIImage(named: "backArrow"), for: .normal)
@@ -31,6 +36,7 @@ class RestaurantDetailViewController: UIViewController {
     }()
     var restaurantNameLabel : UILabel = {
         let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
         label.textColor = .gray
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
         label.textAlignment = .left
@@ -75,17 +81,50 @@ class RestaurantDetailViewController: UIViewController {
         self.view.backgroundColor = .white
         super.viewDidLoad()
         self.setupViews()
+        
+        
+        if let id = self.place?.placeId {
+            self.viewModel.getPlaceDetails(withId: id) { place in
+                guard let pl = place else {
+                    return
+                }
+                
+                self.place = pl
+                if let photos = pl.photos {
+                    let dg = DispatchGroup()
+                    for photo in photos {
+                        dg.enter()
+                        self.viewModel.getPlacePhoto(withReference: photo.photoReference) { [weak self] photo in
+                            if let p = photo {
+                                self?.images.append(p)
+                            }
+                            dg.leave()
+                        }
+                    }
+                    
+                    dg.notify(queue: .main) {
+                        self.imagesCollectionView.reloadData()
+                    }
+                }
+
+            }
+        }
+
+
     }
     
     func setupViews() {
-        
+        self.view.addSubview(self.tableview)
+        self.tableview.dataSource = self
+        self.tableview.delegate = self
+        self.tableview.tableFooterView = UIView()
+        self.tableview.register(DetailsCell.self, forCellReuseIdentifier: DetailsCell.reuseIdentifier)
         self.imagesCollectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.reuseIdentifier)
         self.imagesCollectionView.dataSource = self
         self.imagesCollectionView.delegate = self
         self.imagesCollectionView.alwaysBounceHorizontal = true
         self.imagesCollectionView.backgroundColor = .black
         self.imagesCollectionView.showsVerticalScrollIndicator = false
-        //self.imagesCollectionView.layout.scrollDirection = .horizontal
         
         self.view.addSubview(backButton)
         self.view.addSubview(self.restaurantNameLabel)
@@ -104,7 +143,7 @@ class RestaurantDetailViewController: UIViewController {
         self.restaurantNameLabel.snp.makeConstraints { maker in
             maker.top.equalTo(self.backButton.snp.bottom).offset(10)
             maker.left.equalToSuperview().offset(20)
-            maker.height.equalTo(20)
+            maker.height.greaterThanOrEqualTo(20)
             maker.right.equalToSuperview().inset(50)
 
         }
@@ -144,34 +183,14 @@ class RestaurantDetailViewController: UIViewController {
             maker.height.equalTo(200)
         }
 
-        
+        self.tableview.snp.makeConstraints { maker in
+            maker.top.equalTo(imagesCollectionView.snp.bottom).offset(5)
+            maker.left.right.equalToSuperview()
+            maker.bottom.equalToSuperview()
+        }
     }
     
     @objc func dissmissDetailsVC() {
         self.dismiss(animated: true, completion: nil)
     }
 }
-
-
-extension RestaurantDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-        self.images.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier, for: indexPath) as? CollectionViewCell else {
-            print("Returning UICollectionViewCell")
-            return UICollectionViewCell()
-        }
-
-        cell.imageView.image = UIImage(named: "placeImagePlaceHolder")
-        
-        return cell
-    }
-}
-
-

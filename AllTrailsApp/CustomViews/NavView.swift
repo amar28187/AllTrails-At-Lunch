@@ -101,7 +101,17 @@ class NavView: UIView {
         guard let text = self.textField.text, text.count > 0 else {
             return
         }
+        self.resetTextField()
         self.delegate?.search(withText: text)
+    }
+    
+    // Reset textfield after search
+    func resetTextField() {
+        self.textField.attributedPlaceholder = NSAttributedString(
+            string: "Search for a restaurant",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)]
+        )
+        self.textField.resignFirstResponder()
     }
 }
 
@@ -112,10 +122,16 @@ extension NavView: UITextFieldDelegate {
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        self.resetTextField()
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text, text.count > 0 {
+            self.delegate?.search(withText: text)
+        }
+
+        self.resetTextField()
         return true
     }
     
@@ -124,6 +140,7 @@ extension NavView: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
         return true
     }
 }

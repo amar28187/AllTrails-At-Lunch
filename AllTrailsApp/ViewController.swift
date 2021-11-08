@@ -13,7 +13,6 @@ import MapKit
 class ViewController: UIViewController {
     
     let viewModel: ViewModel = ViewModel()
-    
     let tableView = UITableView()
     let nav = NavView(frame: .zero)
     let mapView = MKMapView(frame: .zero)
@@ -26,9 +25,9 @@ class ViewController: UIViewController {
         button.titleLabel?.textColor = .white
         button.layer.cornerRadius = 7
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.layer.shadowOpacity = 0.5
-        button.layer.shadowColor = UIColor.lightGray.cgColor
-        button.layer.shadowRadius = 20
+//        button.layer.shadowOpacity = 0.5
+//        button.layer.shadowColor = UIColor.lightGray.cgColor
+//        button.layer.shadowRadius = 20
         let image = UIImage(named:"map")?.withRenderingMode(
             UIImage.RenderingMode.alwaysTemplate)
         button.setImage(image, for: .normal)
@@ -36,26 +35,81 @@ class ViewController: UIViewController {
         return button
     }()
     
-    var dataSource: [Place] = []
+    var dataSource: [Place] = [] {
+        didSet{
+            DispatchQueue.main.async {
+                self.updateMap()
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.dataSource = Utils.fetchPlaces(fromFile: "ValidNearbyPlacesResponse")
+        
+        // Test code
+        //self.dataSource = Utils.fetchPlaces(fromFile: "ValidNearbyPlacesResponse")
         //self.dataSource = Utils.fetchPlaces(fromFile: "TextSearchAPIResponse")
+        
+        
         self.locationManager.delegate = self
         self.setUp()
-
-        self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         } else {
+            self.locationManager.requestWhenInUseAuthorization()
         }
+        
+        // Test code
+        //self.currentLocation = CLLocationCoordinate2D(latitude: 47.8044201, longitude: -122.2500863)
+//        if let coordinates = self.currentLocation {
+//            self.viewModel.nearbySearch(forCoordinates: coordinates) { places in
+//                guard places.count > 0 else {
+//                    return
+//                }
+//
+//                self.dataSource = places
+//            }
+//        }
+
     }
 
+    func updateMap() {
+        print(#function)
+        if let res = self.dataSource.first {
+            let cl = CLLocationCoordinate2D(latitude: res.geometry?.location.latitude ?? 0, longitude: res.geometry?.location.longitude ?? 0)
+            self.mapView.camera = MKMapCamera(lookingAtCenter: cl, fromDistance: 8000, pitch: 0, heading: .zero)
+            let region = MKCoordinateRegion(center: cl, latitudinalMeters: 8000, longitudinalMeters: 8000)
+            self.mapView.setRegion(region, animated: true)
+            
+            var annotations = [MapPointAnnotation]()
+            for result in self.dataSource {
+                guard let latitude = result.geometry?.location.latitude,
+                      let longitude = result.geometry?.location.longitude else {
+                    continue
+                }
+                
+                let anno = MapPointAnnotation()
+                anno.name = result.name
+                anno.photoReference = result.photos?.first?.photoReference
+                if result.ratingString.count > 0 {
+                    anno.priceText = result.ratingString + " \u{00B7}" + " Restaurant"
+                }
+                anno.imageURL = result.icon
+                anno.rating = Int(result.rating ?? 0)
+                anno.reviewCount = "(\(result.userRating ?? 0))"
+                anno.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                annotations.append(anno)
+            }
 
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.mapView.addAnnotations(annotations)
+        }
+    }
+    
     func setUp() {
         self.addNav()
         self.setupTableView()
@@ -75,11 +129,10 @@ class ViewController: UIViewController {
     
     func setupTableView() {
         self.view.addSubview(self.tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
         tableView.register(AllTrailsCell.self, forCellReuseIdentifier: AllTrailsCell.reuseIdentifier)
-        tableView.isUserInteractionEnabled = true
         
         self.tableView.snp.makeConstraints { maker in
             maker.bottom.equalTo(self.view.snp.bottom)
@@ -110,8 +163,9 @@ class ViewController: UIViewController {
             self.mapOrListButton.setImage(image, for: .normal)
             self.tableView.isHidden = true
             self.mapView.isHidden = false
-            let cl = CLLocationCoordinate2D(latitude: 47.8044201, longitude: -122.2500863)
-            self.mapView.camera = MKMapCamera(lookingAtCenter: cl, fromDistance: 5, pitch: 0, heading: .zero)
+            if let cl = self.currentLocation {
+                self.mapView.camera = MKMapCamera(lookingAtCenter: cl, fromDistance: 8000, pitch: 0, heading: .zero)
+            }
         } else {
             self.mapOrListButton.setTitle("Map", for: .normal)
             let image = UIImage(named: "map")?.withRenderingMode(
@@ -127,6 +181,7 @@ class ViewController: UIViewController {
     
     func setupMap() {
         self.mapView.delegate = self
+        self.mapView.showsUserLocation = true
         self.mapView.register(MapMarkerView.self, forAnnotationViewWithReuseIdentifier: MapMarkerView.reuseIdentifier)
         
         self.view.addSubview(self.mapView)

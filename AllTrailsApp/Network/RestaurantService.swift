@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 import Alamofire
+import UIKit
 
 enum AllTrailsService {
     case nearbySearch(params: [String: Any])
@@ -55,12 +56,14 @@ extension AllTrailsService: TargetType {
         case .autoComplete(let params):
             fallthrough
         case .queryAutoComplete(let params):
-            fallthrough
-        case .placePhoto(let params):
             var p = params
             p["type"] = "restaurant"
-            p["radius"] = 5000
+            p["radius"] = 8000
             p["language"] = "en"
+            p["key"] = "AIzaSyDQSd210wKX_7cz9MELkxhaEOUhFP0AkSk"
+            return .requestParameters(parameters: p, encoding: URLEncoding.queryString)
+        case .placePhoto(let params):
+            var p = params
             p["key"] = "AIzaSyDQSd210wKX_7cz9MELkxhaEOUhFP0AkSk"
             return .requestParameters(parameters: p, encoding: URLEncoding.queryString)
         }
@@ -71,6 +74,14 @@ extension AllTrailsService: TargetType {
             "Content-Type": "application/json",
         ]
         
+        switch self {
+            case .placePhoto(_):
+                return ["Accept" : "*/*",
+                        "Connection" : "keep-alive",
+                        "Accept-Encoding" : "gzip, deflate, br"]
+            default:
+                break
+        }
         return baseHeaders
     }
     
@@ -99,6 +110,7 @@ class RestaurantService {
             switch result {
             case .success(let response):
                 guard let json = try? JSONDecoder().decode(GooglePlaceDetailsResponse.self, from: response.data) else {
+                    print("\(#function): no results")
                     completion(nil)
                     return
                 }
@@ -116,6 +128,7 @@ class RestaurantService {
             switch result {
             case .success(let response):
                 guard let json = try? JSONDecoder().decode(GooglePlacesResponse.self, from: response.data) else {
+                    print("\(#function): no results")
                     completion([])
                     return
                 }
@@ -128,16 +141,17 @@ class RestaurantService {
         }
     }
     
-    static func fetchPlacePhoto(with parameters: [String: Any], completion: @escaping (Any?) -> Void) {
+    static func fetchPlacePhoto(with parameters: [String: Any], completion: @escaping (UIImage?) -> Void) {
         self.provider.request(.placePhoto(params: parameters)) { result in
             switch result {
             case .success(let response):
-                guard let json = try? JSONDecoder().decode(GooglePlaceDetailsResponse.self, from: response.data) else {
+                guard let image = UIImage(data: response.data) else {
+                    print("\(#function): no results")
                     completion(nil)
                     return
                 }
                 
-                completion(json.result)
+                completion(image)
             case .failure(let error):
                 print(error.localizedDescription)
                 completion(nil)
@@ -150,6 +164,7 @@ class RestaurantService {
             switch result {
             case .success(let response):
                 guard let json = try? JSONDecoder().decode(GooglePlacesResponse.self, from: response.data) else {
+                    print("\(#function): no results")
                     completion([])
                     return
                 }
@@ -162,36 +177,36 @@ class RestaurantService {
         }
     }
     
-    static func autoComplete(with parameters: [String: Any]) {
+    static func autoComplete(with parameters: [String: Any], completion: @escaping ([Predictions]) -> Void) {
         self.provider.request(.autoComplete(params: parameters)) { result in
             switch result {
             case .success(let response):
-                guard let json = try? JSONDecoder().decode(GooglePlacesResponse.self, from: response.data) else {
-                    //completion([])
+                guard let json = try? JSONDecoder().decode(AutoCompleteResponse.self, from: response.data) else {
+                    print("\(#function): no results")
+                    completion([])
                     return
                 }
-                
-                //completion(json.results)
+                completion(json.predictions)
             case .failure(let error):
                 print(error.localizedDescription)
-                //completion([])
+                completion([])
             }
         }
     }
     
-    static func queryAutoComplete(with parameters: [String: Any]) {
+    static func queryAutoComplete(with parameters: [String: Any], completion: @escaping ([Predictions]) -> Void) {
         self.provider.request(.queryAutoComplete(params: parameters)) { result in
             switch result {
             case .success(let response):
-                guard let json = try? JSONDecoder().decode(GooglePlacesResponse.self, from: response.data) else {
-                    //completion([])
+                guard let json = try? JSONDecoder().decode(AutoCompleteResponse.self, from: response.data) else {
+                    print("\(#function): no results")
+                    completion([])
                     return
                 }
-                
-                //completion(json.results)
+                completion(json.predictions)
             case .failure(let error):
                 print(error.localizedDescription)
-                //completion([])
+                completion([])
             }
         }
     }

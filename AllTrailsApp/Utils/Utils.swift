@@ -49,7 +49,7 @@ class Utils {
              
     }
     
-    class func fetchPredictions(fromFile: String) -> [PredictionResults] {
+    class func fetchPredictions(fromFile: String) -> [Predictions] {
         if let data = readFile(fromFile){
             do {
                 let json = try JSONDecoder().decode(AutoCompleteResponse.self, from: data)

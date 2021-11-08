@@ -32,7 +32,10 @@ struct Place : Codable {
     let priceLevel: Int?
     let rating: Double?
     let icon: String?
+    let phoneNumber: String?
     let formattedAddress: String?
+    let placeId: String?
+    let reference: String?
     var ratingString: String {
         get{
             String(repeating: "$", count: priceLevel ?? 0)
@@ -51,6 +54,9 @@ struct Place : Codable {
         case rating = "rating"
         case icon = "icon"
         case formattedAddress = "formatted_address"
+        case phoneNumber = "formatted_phone_number"
+        case placeId = "place_id"
+        case reference =  "reference"
     }
     
     struct Location : Codable {
@@ -97,14 +103,14 @@ struct Place : Codable {
 }
 
 struct AutoCompleteResponse: Codable {
-    let predictions: [PredictionResults]
+    let predictions: [Predictions]
     
     enum CodingKeys : String, CodingKey {
         case predictions = "predictions"
     }
 }
 
-struct PredictionResults: Codable {
+struct Predictions: Codable {
     let description: String?
     
     enum CodingKeys : String, CodingKey {

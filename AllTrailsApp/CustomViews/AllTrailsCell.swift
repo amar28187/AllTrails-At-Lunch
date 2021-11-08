@@ -37,7 +37,7 @@ class AllTrailsCell: UITableViewCell {
         label.textColor = .lightGray
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "$$$ " + "\u{00B7}" + " Restaurant"
+        label.text = "Restaurant"
         return label
     }()
     
@@ -63,13 +63,11 @@ class AllTrailsCell: UITableViewCell {
     }()
     
     let favoriteButton : UIButton = {
-        let button = UIButton()
+        let button = UIButton(frame: .zero)
         let image = UIImage(named:"favorite")?.withRenderingMode(
             UIImage.RenderingMode.alwaysTemplate)
         button.tintColor = .lightGray
         button.setImage(image, for: .normal)
-        //button.isUserInteractionEnabled = true
-        //button.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -86,37 +84,15 @@ class AllTrailsCell: UITableViewCell {
     
     func setupViews() {
         self.selectionStyle = .none
-        self.addSubview(self.cellContentView)
+        self.contentView.addSubview(cellContentView)
         self.cellContentView.addSubview(self.placeImageView)
         self.cellContentView.addSubview(self.restaurantNameLabel)
         self.cellContentView.addSubview(self.ratingView)
         self.cellContentView.addSubview(self.reviewCountLabel)
         self.cellContentView.addSubview(self.priceAndSupportingTextLabel)
-        self.favoriteButton.isUserInteractionEnabled = true
-        self.favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
         self.cellContentView.addSubview(self.favoriteButton)
-        
         self.makeConstriants()
-        
-    }
-    
-    
-    
-    @objc func favoriteButtonTapped() {
-        print("Hello")
-        if favoriteButton.image(for: .normal) == UIImage(named: "favorite") {
-            let image = UIImage(named:"favoriteFilled")?.withRenderingMode(
-                UIImage.RenderingMode.alwaysTemplate)
-            favoriteButton.tintColor = ColorUtils.mapButtonColor
-            favoriteButton.setImage(image, for: .normal)
-        } else {
-            let image = UIImage(named:"favorite")?.withRenderingMode(
-                UIImage.RenderingMode.alwaysTemplate)
-            favoriteButton.tintColor = .lightGray
-            favoriteButton.setImage(image, for: .normal)
-        }
-        
-        //favoriteButton.setNeedsDisplay()
+        //self.bringSubviewToFront(cellContentView)
     }
     
     func setRating() {
@@ -124,15 +100,18 @@ class AllTrailsCell: UITableViewCell {
     }
     
     func makeConstriants() {
+        self.contentView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
+        
         self.cellContentView.snp.makeConstraints { maker in
-            maker.top.left.right.equalToSuperview().inset(20)
+            maker.top.left.right.equalToSuperview().inset(20).priority(999)
             maker.bottom.equalToSuperview()
         }
         
         self.placeImageView.snp.makeConstraints { maker in
-            maker.top.left.equalToSuperview().inset(20)
-            maker.bottom.equalToSuperview().inset(20)
-            maker.width.equalTo(90)
+            maker.top.left.bottom.equalToSuperview().inset(20)
+            maker.width.equalTo(self.placeImageView.snp.height)
         }
         
         self.ratingView.snp.makeConstraints { maker in
