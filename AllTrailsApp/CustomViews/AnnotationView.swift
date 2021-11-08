@@ -1,30 +1,20 @@
 //
-//  AllTrailsCell.swift
+//  AnnotationView.swift
 //  AllTrailsApp
 //
-//  Created by Amar Makana on 11/2/21.
+//  Created by Amar Makana on 11/7/21.
 //
 
 import Foundation
 import UIKit
-import SnapKit
+import MapKit
 
-class AllTrailsCell: UITableViewCell {
-    static let reuseIdentifier = "AllTrailsCellIdentifiier"
-    
+class AnnotationView: UIView {
     var rating: Int {
         didSet {
             self.setRating()
         }
     }
-    
-    let cellContentView : UIView = {
-        let view = UIView(frame: .zero)
-        view.layer.borderWidth = 0.5
-        view.layer.borderColor = UIColor.lightGray.cgColor
-        view.layer.cornerRadius = 10
-        return view
-    }()
     
     let placeImageView : UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -62,21 +52,26 @@ class AllTrailsCell: UITableViewCell {
         return label
     }()
     
-    let favoriteButton : UIButton = {
-        let button = UIButton()
+//    let favoriteButton : UIButton = {
+//        let button = UIButton()
+//
+//        button.tintColor = .lightGray
+//        button.setImage(image, for: .normal)
+//        return button
+//    }()
+    
+    let favoriteButton : UIImageView = {
+        let imageView = UIImageView(frame: .zero)
         let image = UIImage(named:"favorite")?.withRenderingMode(
             UIImage.RenderingMode.alwaysTemplate)
-        button.tintColor = .lightGray
-        button.setImage(image, for: .normal)
-        //button.isUserInteractionEnabled = true
-        //button.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
-        return button
+        imageView.image = image
+        imageView.tintColor = .lightGray
+        return imageView
     }()
-
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    
+    override init(frame: CGRect) {
         self.rating = 0
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(frame: frame)
         self.setupViews()
     }
     
@@ -84,39 +79,18 @@ class AllTrailsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func setupViews() {
-        self.selectionStyle = .none
-        self.addSubview(self.cellContentView)
-        self.cellContentView.addSubview(self.placeImageView)
-        self.cellContentView.addSubview(self.restaurantNameLabel)
-        self.cellContentView.addSubview(self.ratingView)
-        self.cellContentView.addSubview(self.reviewCountLabel)
-        self.cellContentView.addSubview(self.priceAndSupportingTextLabel)
-        self.favoriteButton.isUserInteractionEnabled = true
-        self.favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
-        self.cellContentView.addSubview(self.favoriteButton)
+        self.addSubview(self.placeImageView)
+        self.addSubview(self.restaurantNameLabel)
+        self.addSubview(self.ratingView)
+        self.addSubview(self.reviewCountLabel)
+        self.addSubview(self.priceAndSupportingTextLabel)
+        self.isUserInteractionEnabled = true
+        self.addSubview(self.favoriteButton)
         
         self.makeConstriants()
         
-    }
-    
-    
-    
-    @objc func favoriteButtonTapped() {
-        print("Hello")
-        if favoriteButton.image(for: .normal) == UIImage(named: "favorite") {
-            let image = UIImage(named:"favoriteFilled")?.withRenderingMode(
-                UIImage.RenderingMode.alwaysTemplate)
-            favoriteButton.tintColor = ColorUtils.mapButtonColor
-            favoriteButton.setImage(image, for: .normal)
-        } else {
-            let image = UIImage(named:"favorite")?.withRenderingMode(
-                UIImage.RenderingMode.alwaysTemplate)
-            favoriteButton.tintColor = .lightGray
-            favoriteButton.setImage(image, for: .normal)
-        }
-        
-        //favoriteButton.setNeedsDisplay()
     }
     
     func setRating() {
@@ -124,15 +98,10 @@ class AllTrailsCell: UITableViewCell {
     }
     
     func makeConstriants() {
-        self.cellContentView.snp.makeConstraints { maker in
-            maker.top.left.right.equalToSuperview().inset(20)
-            maker.bottom.equalToSuperview()
-        }
         
         self.placeImageView.snp.makeConstraints { maker in
-            maker.top.left.equalToSuperview().inset(20)
-            maker.bottom.equalToSuperview().inset(20)
-            maker.width.equalTo(90)
+            maker.top.left.bottom.equalToSuperview().inset(10)
+            maker.width.equalTo(self.placeImageView.snp.height)
         }
         
         self.ratingView.snp.makeConstraints { maker in
@@ -158,7 +127,7 @@ class AllTrailsCell: UITableViewCell {
 
         self.favoriteButton.snp.makeConstraints { maker in
             maker.height.width.equalTo(30)
-            maker.top.equalToSuperview().offset(20)
+            maker.top.equalTo(self.placeImageView)
             maker.right.equalToSuperview().offset(-15)
         }
                 
@@ -169,5 +138,65 @@ class AllTrailsCell: UITableViewCell {
             maker.height.greaterThanOrEqualTo(20)
         }
         
+    }
+}
+
+
+class MapMarkerView: MKAnnotationView {
+    static let reuseIdentifier = "MapMarkerViewIdentifier"
+    
+    var annotationView = AnnotationView(frame: .zero)
+    var mapPointAnnotation: MapPointAnnotation?
+    
+    var isFavorite: Bool = false {
+        didSet{
+            if isFavorite {
+                self.annotationView.favoriteButton.image = UIImage(named:"favoriteFilled")?.withRenderingMode(
+                    UIImage.RenderingMode.alwaysTemplate)
+                self.annotationView.favoriteButton.tintColor = ColorUtils.mapButtonColor
+            } else {
+                self.annotationView.favoriteButton.image = UIImage(named:"favorite")?.withRenderingMode(
+                    UIImage.RenderingMode.alwaysTemplate)
+                self.annotationView.favoriteButton.tintColor = .lightGray
+            }
+        }
+    }
+//    
+//    var title: String = "" {
+//        didSet{
+//            self.annotationView.restaurantNameLabel.text = title
+//        }
+//    }
+//    
+//    var priceText: String = "" {
+//        didSet{
+//            self.annotationView.priceAndSupportingTextLabel.text = priceText
+//        }
+//    }
+//    
+//    var placeImage: UIImage = UIImage(named: "placeImagePlaceHolder")! {
+//        didSet{
+//            self.annotationView.placeImageView.image = placeImage
+//        }
+//    }
+//    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        self.setupViews()
+    }
+    
+    func setupViews() {        
+        self.detailCalloutAccessoryView = self.annotationView
+        self.canShowCallout = true
+        self.annotationView.snp.makeConstraints { maker in
+            maker.height.equalTo(150)
+            maker.width.equalTo(UIScreen.main.bounds.width - 75)
+        }
     }
 }

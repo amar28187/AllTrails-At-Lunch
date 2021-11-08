@@ -15,6 +15,7 @@ enum AllTrailsService {
     case placeDetail(params: [String: Any])
     case autoComplete(params: [String: Any])
     case placePhoto(params: [String: Any])
+    case queryAutoComplete(params: [String: Any])
 }
 
 extension AllTrailsService: TargetType {
@@ -27,13 +28,15 @@ extension AllTrailsService: TargetType {
         case .nearbySearch(_):
             return Paths.nearbySearch + Paths.json
         case .textSearch(_):
-            return Paths.textSearch
+            return Paths.textSearch + Paths.json
         case .placeDetail(_):
-            return Paths.placeDetail
+            return Paths.placeDetail + Paths.json
         case .autoComplete(_):
-            return Paths.autoComplete
+            return Paths.autoComplete + Paths.json
         case .placePhoto(_):
             return Paths.placePhoto
+        case .queryAutoComplete(_):
+            return Paths.queryAutoComplete + Paths.json
         }
     }
     
@@ -50,6 +53,8 @@ extension AllTrailsService: TargetType {
         case .placeDetail(let params):
             fallthrough
         case .autoComplete(let params):
+            fallthrough
+        case .queryAutoComplete(let params):
             fallthrough
         case .placePhoto(let params):
             var p = params
@@ -77,6 +82,7 @@ class Paths {
     static let textSearch = "textsearch/"
     static let placeDetail = "details/"
     static let nearbySearch = "nearbysearch/"
+    static let queryAutoComplete = "queryautocomplete/"
     static let json = "json"
 }
 
@@ -156,8 +162,38 @@ class RestaurantService {
         }
     }
     
-    static func autoComplete() {
-        
+    static func autoComplete(with parameters: [String: Any]) {
+        self.provider.request(.autoComplete(params: parameters)) { result in
+            switch result {
+            case .success(let response):
+                guard let json = try? JSONDecoder().decode(GooglePlacesResponse.self, from: response.data) else {
+                    //completion([])
+                    return
+                }
+                
+                //completion(json.results)
+            case .failure(let error):
+                print(error.localizedDescription)
+                //completion([])
+            }
+        }
+    }
+    
+    static func queryAutoComplete(with parameters: [String: Any]) {
+        self.provider.request(.queryAutoComplete(params: parameters)) { result in
+            switch result {
+            case .success(let response):
+                guard let json = try? JSONDecoder().decode(GooglePlacesResponse.self, from: response.data) else {
+                    //completion([])
+                    return
+                }
+                
+                //completion(json.results)
+            case .failure(let error):
+                print(error.localizedDescription)
+                //completion([])
+            }
+        }
     }
 }
 

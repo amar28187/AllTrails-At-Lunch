@@ -49,5 +49,19 @@ class Utils {
              
     }
     
+    class func fetchPredictions(fromFile: String) -> [PredictionResults] {
+        if let data = readFile(fromFile){
+            do {
+                let json = try JSONDecoder().decode(AutoCompleteResponse.self, from: data)
+                return json.predictions
+            } catch let error{
+                print(error.localizedDescription)
+                return []
+            }
+        } else {
+            return []
+        }
+    }
+    
     
 }

@@ -12,7 +12,6 @@
 		4609103327372EBB0062362B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 4609103227372EBB0062362B /* Moya */; };
 		46091035273731B50062362B /* NearbySearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 46091034273731B50062362B /* NearbySearchResponse.json */; };
 		46091055273739A30062362B /* PlaceDetailsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 46091054273739A30062362B /* PlaceDetailsResponse.json */; };
-		46091056273748DC0062362B /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924E27346B4100089741 /* RestaurantService.swift */; };
 		4609105827374F470062362B /* ValidNearbyPlacesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 4609105727374F470062362B /* ValidNearbyPlacesResponse.json */; };
 		46091060273758890062362B /* AllTrailsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609105F273758890062362B /* AllTrailsAppTests.swift */; };
 		46091068273758DD0062362B /* AllTrailsParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46091067273758DD0062362B /* AllTrailsParsingTests.swift */; };
@@ -21,16 +20,22 @@
 		4615F2912731F75200B05C9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2902731F75200B05C9A /* SceneDelegate.swift */; };
 		4615F2932731F75200B05C9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2922731F75200B05C9A /* ViewController.swift */; };
 		4615F2962731F75200B05C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4615F2942731F75200B05C9A /* Main.storyboard */; };
-		4615F2992731F75200B05C9A /* AllTrailsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2972731F75200B05C9A /* AllTrailsApp.xcdatamodeld */; };
 		4615F29B2731F75500B05C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4615F29A2731F75500B05C9A /* Assets.xcassets */; };
 		4615F29E2731F75500B05C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4615F29C2731F75500B05C9A /* LaunchScreen.storyboard */; };
 		4615F2A72731F8CC00B05C9A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4615F2A62731F8CC00B05C9A /* SnapKit */; };
 		4615F2A92731F8EA00B05C9A /* AllTrailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F2A82731F8EA00B05C9A /* AllTrailsCell.swift */; };
+		468CEE5F27385DD900C64CB5 /* AutoCompleteResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 468CEE5E27385DD900C64CB5 /* AutoCompleteResponse.json */; };
+		468CEE6127385E5400C64CB5 /* QueryAutoCompleteResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 468CEE6027385E5400C64CB5 /* QueryAutoCompleteResponse.json */; };
+		468CEE642738672200C64CB5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE632738672200C64CB5 /* ViewModel.swift */; };
+		468CEE66273867D100C64CB5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE65273867D100C64CB5 /* TextField.swift */; };
+		468CEE68273867DC00C64CB5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE67273867DC00C64CB5 /* Utils.swift */; };
+		468CEE6A273867ED00C64CB5 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE69273867ED00C64CB5 /* ResponseModels.swift */; };
+		468CEE6C273867F600C64CB5 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE6B273867F600C64CB5 /* RestaurantService.swift */; };
+		468CEE6F273867FE00C64CB5 /* AllTrailsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE6D273867FE00C64CB5 /* AllTrailsApp.xcdatamodeld */; };
+		468CEE71273868AE00C64CB5 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE70273868AE00C64CB5 /* ViewController+Extensions.swift */; };
+		468CEE7327389CFD00C64CB5 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CEE7227389CFD00C64CB5 /* AnnotationView.swift */; };
 		468E923E273247BC00089741 /* TextSearchAPIResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 468E923D273247BC00089741 /* TextSearchAPIResponse.json */; };
-		468E92402732482900089741 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E923F2732482900089741 /* Utils.swift */; };
 		468E9242273263F300089741 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E9241273263F300089741 /* NavView.swift */; };
-		468E9244273266E900089741 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E9243273266E900089741 /* TextField.swift */; };
-		468E924627326A9000089741 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924527326A9000089741 /* ResponseModels.swift */; };
 		468E924B273446B500089741 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924A273446B500089741 /* RatingView.swift */; };
 		468E924D2734576D00089741 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E924C2734576D00089741 /* ColorUtils.swift */; };
 /* End PBXBuildFile section */
@@ -61,19 +66,24 @@
 		4615F2902731F75200B05C9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4615F2922731F75200B05C9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4615F2952731F75200B05C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4615F2982731F75200B05C9A /* AllTrailsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AllTrailsApp.xcdatamodel; sourceTree = "<group>"; };
 		4615F29A2731F75500B05C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4615F29D2731F75500B05C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4615F29F2731F75500B05C9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4615F2A82731F8EA00B05C9A /* AllTrailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrailsCell.swift; sourceTree = "<group>"; };
+		468CEE5E27385DD900C64CB5 /* AutoCompleteResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AutoCompleteResponse.json; sourceTree = "<group>"; };
+		468CEE6027385E5400C64CB5 /* QueryAutoCompleteResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QueryAutoCompleteResponse.json; sourceTree = "<group>"; };
+		468CEE632738672200C64CB5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		468CEE65273867D100C64CB5 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		468CEE67273867DC00C64CB5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		468CEE69273867ED00C64CB5 /* ResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
+		468CEE6B273867F600C64CB5 /* RestaurantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		468CEE6E273867FE00C64CB5 /* AllTrailsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AllTrailsApp.xcdatamodel; sourceTree = "<group>"; };
+		468CEE70273868AE00C64CB5 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
+		468CEE7227389CFD00C64CB5 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		468E923D273247BC00089741 /* TextSearchAPIResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TextSearchAPIResponse.json; sourceTree = "<group>"; };
-		468E923F2732482900089741 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "../New Group1/Utils.swift"; sourceTree = "<group>"; };
 		468E9241273263F300089741 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
-		468E9243273266E900089741 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = "../New Group/TextField.swift"; sourceTree = "<group>"; };
-		468E924527326A9000089741 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResponseModels.swift; path = "../New Group2/ResponseModels.swift"; sourceTree = "<group>"; };
 		468E924A273446B500089741 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		468E924C2734576D00089741 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
-		468E924E27346B4100089741 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantService.swift; path = "../New Group3/RestaurantService.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +109,12 @@
 		4604B8442734B3E000168BDC /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				468CEE65273867D100C64CB5 /* TextField.swift */,
 				468E924A273446B500089741 /* RatingView.swift */,
 				4615F2A82731F8EA00B05C9A /* AllTrailsCell.swift */,
 				468E9241273263F300089741 /* NavView.swift */,
-				468E9243273266E900089741 /* TextField.swift */,
 				4609102F273717720062362B /* CollectionViewCell.swift */,
+				468CEE7227389CFD00C64CB5 /* AnnotationView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -111,8 +122,8 @@
 		4604B8452734B3FA00168BDC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				468CEE67273867DC00C64CB5 /* Utils.swift */,
 				468E924C2734576D00089741 /* ColorUtils.swift */,
-				468E923F2732482900089741 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -120,7 +131,7 @@
 		4604B8462734B40A00168BDC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				468E924527326A9000089741 /* ResponseModels.swift */,
+				468CEE69273867ED00C64CB5 /* ResponseModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,7 +150,7 @@
 		4604B8482734B44500168BDC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				468E924E27346B4100089741 /* RestaurantService.swift */,
+				468CEE6B273867F600C64CB5 /* RestaurantService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -147,7 +158,7 @@
 		4604B8492734B45400168BDC /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				4615F2972731F75200B05C9A /* AllTrailsApp.xcdatamodeld */,
+				468CEE6D273867FE00C64CB5 /* AllTrailsApp.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -190,10 +201,12 @@
 				4604B8462734B40A00168BDC /* Models */,
 				4604B8452734B3FA00168BDC /* Utils */,
 				4604B8442734B3E000168BDC /* CustomViews */,
+				468CEE622738671400C64CB5 /* View Models */,
 				4615F28E2731F75200B05C9A /* AppDelegate.swift */,
 				4615F2902731F75200B05C9A /* SceneDelegate.swift */,
 				4615F2922731F75200B05C9A /* ViewController.swift */,
 				4609102D2737144D0062362B /* RestaurantDetailViewController.swift */,
+				468CEE70273868AE00C64CB5 /* ViewController+Extensions.swift */,
 			);
 			path = AllTrailsApp;
 			sourceTree = "<group>";
@@ -201,6 +214,8 @@
 		468CEE2C2738589200C64CB5 /* Test JSONs */ = {
 			isa = PBXGroup;
 			children = (
+				468CEE6027385E5400C64CB5 /* QueryAutoCompleteResponse.json */,
+				468CEE5E27385DD900C64CB5 /* AutoCompleteResponse.json */,
 				4609106B273761A50062362B /* ValidPlaceDetailsResponse.json */,
 				4609105727374F470062362B /* ValidNearbyPlacesResponse.json */,
 				468E923D273247BC00089741 /* TextSearchAPIResponse.json */,
@@ -208,6 +223,14 @@
 				46091034273731B50062362B /* NearbySearchResponse.json */,
 			);
 			path = "Test JSONs";
+			sourceTree = "<group>";
+		};
+		468CEE622738671400C64CB5 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				468CEE632738672200C64CB5 /* ViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468CEE5F27385DD900C64CB5 /* AutoCompleteResponse.json in Resources */,
 				4609106C273761A60062362B /* ValidPlaceDetailsResponse.json in Resources */,
 				4615F29E2731F75500B05C9A /* LaunchScreen.storyboard in Resources */,
 				4609105827374F470062362B /* ValidNearbyPlacesResponse.json in Resources */,
@@ -313,6 +337,7 @@
 				46091035273731B50062362B /* NearbySearchResponse.json in Resources */,
 				4615F2962731F75200B05C9A /* Main.storyboard in Resources */,
 				46091055273739A30062362B /* PlaceDetailsResponse.json in Resources */,
+				468CEE6127385E5400C64CB5 /* QueryAutoCompleteResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,16 +360,19 @@
 				4615F2932731F75200B05C9A /* ViewController.swift in Sources */,
 				4615F28F2731F75200B05C9A /* AppDelegate.swift in Sources */,
 				4615F2A92731F8EA00B05C9A /* AllTrailsCell.swift in Sources */,
+				468CEE66273867D100C64CB5 /* TextField.swift in Sources */,
+				468CEE71273868AE00C64CB5 /* ViewController+Extensions.swift in Sources */,
 				468E924B273446B500089741 /* RatingView.swift in Sources */,
-				46091056273748DC0062362B /* RestaurantService.swift in Sources */,
-				468E9244273266E900089741 /* TextField.swift in Sources */,
 				4609102E2737144D0062362B /* RestaurantDetailViewController.swift in Sources */,
-				4615F2992731F75200B05C9A /* AllTrailsApp.xcdatamodeld in Sources */,
-				468E924627326A9000089741 /* ResponseModels.swift in Sources */,
+				468CEE68273867DC00C64CB5 /* Utils.swift in Sources */,
+				468CEE7327389CFD00C64CB5 /* AnnotationView.swift in Sources */,
 				4615F2912731F75200B05C9A /* SceneDelegate.swift in Sources */,
+				468CEE642738672200C64CB5 /* ViewModel.swift in Sources */,
 				46091030273717720062362B /* CollectionViewCell.swift in Sources */,
+				468CEE6A273867ED00C64CB5 /* ResponseModels.swift in Sources */,
 				468E924D2734576D00089741 /* ColorUtils.swift in Sources */,
-				468E92402732482900089741 /* Utils.swift in Sources */,
+				468CEE6C273867F600C64CB5 /* RestaurantService.swift in Sources */,
+				468CEE6F273867FE00C64CB5 /* AllTrailsApp.xcdatamodeld in Sources */,
 				468E9242273263F300089741 /* NavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +569,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AllTrailsApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,6 +590,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AllTrailsApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,14 +668,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		4615F2972731F75200B05C9A /* AllTrailsApp.xcdatamodeld */ = {
+		468CEE6D273867FE00C64CB5 /* AllTrailsApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4615F2982731F75200B05C9A /* AllTrailsApp.xcdatamodel */,
+				468CEE6E273867FE00C64CB5 /* AllTrailsApp.xcdatamodel */,
 			);
-			currentVersion = 4615F2982731F75200B05C9A /* AllTrailsApp.xcdatamodel */;
-			name = AllTrailsApp.xcdatamodeld;
-			path = "../New Group4/AllTrailsApp.xcdatamodeld";
+			currentVersion = 468CEE6E273867FE00C64CB5 /* AllTrailsApp.xcdatamodel */;
+			path = AllTrailsApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

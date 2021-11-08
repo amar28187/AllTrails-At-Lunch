@@ -96,3 +96,19 @@ struct Place : Codable {
     }
 }
 
+struct AutoCompleteResponse: Codable {
+    let predictions: [PredictionResults]
+    
+    enum CodingKeys : String, CodingKey {
+        case predictions = "predictions"
+    }
+}
+
+struct PredictionResults: Codable {
+    let description: String?
+    
+    enum CodingKeys : String, CodingKey {
+        case description = "description"
+    }
+}
+

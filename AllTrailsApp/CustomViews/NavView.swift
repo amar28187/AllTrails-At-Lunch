@@ -8,7 +8,12 @@
 import UIKit
 import Foundation
 
+protocol NavViewDelegate: AnyObject {
+    func search(withText: String)
+}
+
 class NavView: UIView {
+    weak var delegate: NavViewDelegate?
     let filterButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.setAttributedTitle(NSAttributedString(
@@ -93,6 +98,10 @@ class NavView: UIView {
     
     @objc func search() {
         print(String(describing: self.textField.text))
+        guard let text = self.textField.text, text.count > 0 else {
+            return
+        }
+        self.delegate?.search(withText: text)
     }
 }
 

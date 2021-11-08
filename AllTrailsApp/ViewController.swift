@@ -11,7 +11,9 @@ import CoreLocation
 import MapKit
 
 class ViewController: UIViewController {
-
+    
+    let viewModel: ViewModel = ViewModel()
+    
     let tableView = UITableView()
     let nav = NavView(frame: .zero)
     let mapView = MKMapView(frame: .zero)
@@ -43,18 +45,13 @@ class ViewController: UIViewController {
         //self.dataSource = Utils.fetchPlaces(fromFile: "TextSearchAPIResponse")
         self.locationManager.delegate = self
         self.setUp()
+
         self.locationManager.requestWhenInUseAuthorization()
-        let params = ["location" : "47.80,-122.26"]
-//        RestaurantService.fetchNearbyPlaces(with: params) { places in
-//            guard places.count > 0 else {
-//                return
-//            }
-//            
-//            print(places)
-//        }
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        } else {
         }
     }
 
@@ -67,6 +64,7 @@ class ViewController: UIViewController {
     }
     
     func addNav() {
+        self.nav.delegate = self
         self.view.addSubview(self.nav)
         
         self.nav.snp.makeConstraints { maker in
@@ -119,7 +117,7 @@ class ViewController: UIViewController {
             let image = UIImage(named: "map")?.withRenderingMode(
             UIImage.RenderingMode.alwaysTemplate)
             self.mapOrListButton.setImage(image, for: .normal)
-            
+            self.mapView.showAnnotations(self.mapView.annotations, animated: true)
             self.tableView.isHidden = false
             self.mapView.isHidden = true
         }
@@ -128,6 +126,9 @@ class ViewController: UIViewController {
     }
     
     func setupMap() {
+        self.mapView.delegate = self
+        self.mapView.register(MapMarkerView.self, forAnnotationViewWithReuseIdentifier: MapMarkerView.reuseIdentifier)
+        
         self.view.addSubview(self.mapView)
         self.view.sendSubviewToBack(self.mapView)
         
@@ -138,99 +139,4 @@ class ViewController: UIViewController {
         }
     }
 
-}
-
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.dataSource.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllTrailsCellIdentifiier") as? AllTrailsCell else {
-            return UITableViewCell()
-        }
-        
-        let place = self.dataSource[indexPath.row]
-
-        cell.restaurantNameLabel.text = place.name
-        cell.priceAndSupportingTextLabel.text = place.ratingString + " \u{00B7}" + " Restaurant"
-        cell.reviewCountLabel.text = "(\(place.userRating ?? 0))"
-        cell.rating = Int(place.rating ?? 0)
-        
-        if let icon = place.icon {
-            let url = URL(string: icon)
-
-            DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url!) {
-                    DispatchQueue.main.async {
-                        cell.placeImageView.image = UIImage(data: data)
-                    }
-                }
-            }
-        }
-
-        return cell
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        let vc = RestaurantDetailViewController()
-        vc.place = Utils.fetchDetails(fromFile: "ValidPlaceDetailsResponse")
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true) {
-            
-        }
-        
-        
-    }
-    
-}
-
-extension ViewController: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        print("locationManagerDidChangeAuthorization")
-        if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {
-            manager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("didFailWithError")
-        
-        let cl = CLLocationCoordinate2D(latitude: 47.8044201, longitude: -122.2500863)
-        self.mapView.camera = MKMapCamera(lookingAtCenter: cl, fromDistance: 5, pitch: 0, heading: .zero)
-        let region = MKCoordinateRegion(center: cl, latitudinalMeters: 5, longitudinalMeters: 5)
-        self.mapView.setRegion(region, animated: true)
-        
-        let anno = MKPointAnnotation()
-        anno.coordinate = cl
-        self.mapView.addAnnotation(anno)
-    }
-    
-    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
-        print("locationManagerDidPauseLocationUpdates")
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations")
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {
-            self.locationManager.stopUpdatingLocation()
-            return
-            
-        }
-        self.locationManager.stopUpdatingLocation()
-        self.currentLocation = locValue
-
-        if let cl = self.currentLocation {
-            self.mapView.camera = MKMapCamera(lookingAtCenter: cl, fromDistance: 5, pitch: 0, heading: .zero)
-        } else {
-            let cl = CLLocationCoordinate2D(latitude: 47.8044201, longitude: -122.2500863)
-            self.mapView.camera = MKMapCamera(lookingAtCenter: cl, fromDistance: 5, pitch: 0, heading: .zero)
-        }
-    }
 }
